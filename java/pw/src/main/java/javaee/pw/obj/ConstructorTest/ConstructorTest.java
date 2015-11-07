@@ -2,6 +2,9 @@ package javaee.pw.obj.ConstructorTest;
 
 import java.util.*;
 
+/* Labs date: 2015.11.07 */
+ 
+
 /**
  * This program demonstrates object construction.
  * @version 1.01 2004-02-19
