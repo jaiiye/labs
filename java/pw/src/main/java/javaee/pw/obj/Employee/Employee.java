@@ -1,3 +1,4 @@
+/* Labs date: 2015.11.07 */
 package javaee.pw.obj.Employee;
 
 /**

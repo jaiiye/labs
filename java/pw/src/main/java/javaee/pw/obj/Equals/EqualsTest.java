@@ -1,4 +1,5 @@
-package horstmann.v1ch05.equals;
+package javaee.pw.obj.Equals;
+
 
 /**
  * This program demonstrates the equals method.
@@ -9,10 +10,10 @@ public class EqualsTest
 {
    public static void main(String[] args)
    {
-      Employee alice1 = new Employee("Alice Adams", 75000, 1987, 12, 15);
+      Employee alice1 = new Employee("Alice Adams", 75000, 1987, 12, 15, 1900, 1, 1);
       Employee alice2 = alice1;
-      Employee alice3 = new Employee("Alice Adams", 75000, 1987, 12, 15);
-      Employee bob = new Employee("Bob Brandson", 50000, 1989, 10, 1);
+      Employee alice3 = new Employee("Alice Adams", 75000, 1987, 12, 15, 1950, 1, 1);
+      Employee bob = new Employee("Bob Brandson", 50000, 1989, 10, 1, 1960, 12, 15);
 
       System.out.println("alice1 == alice2: " + (alice1 == alice2));
 
@@ -24,8 +25,8 @@ public class EqualsTest
 
       System.out.println("bob.toString(): " + bob);
 
-      Manager carl = new Manager("Carl Cracker", 80000, 1987, 12, 15);
-      Manager boss = new Manager("Carl Cracker", 80000, 1987, 12, 15);
+      Manager carl = new Manager("Carl Cracker", 80000, 1987, 12, 15, 1970, 1, 1);
+      Manager boss = new Manager("Carl Cracker", 80000, 1987, 12, 15, 1975, 10, 10);
       boss.setBonus(5000);
       System.out.println("carl.toString(): " + carl);
       System.out.println("boss.toString(): " + boss);
