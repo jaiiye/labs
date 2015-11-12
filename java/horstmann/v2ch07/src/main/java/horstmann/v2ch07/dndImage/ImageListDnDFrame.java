@@ -104,7 +104,7 @@ class ImageListTransferHandler extends TransferHandler
       Transferable transferable = support.getTransferable();
       List<DataFlavor> flavors = Arrays.asList(transferable.getTransferDataFlavors());
 
-      List<Image> images = new ArrayList<>();
+      List<Image> images = new ArrayList<Image>();
 
       try
       {

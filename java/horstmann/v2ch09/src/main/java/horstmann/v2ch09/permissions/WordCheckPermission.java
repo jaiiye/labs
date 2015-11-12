@@ -70,7 +70,7 @@ public class WordCheckPermission extends Permission
     */
    public Set<String> badWordSet()
    {
-      Set<String> set = new HashSet<>();
+      Set<String> set = new HashSet<String>();
       set.addAll(Arrays.asList(getName().split(",")));
       return set;
    }

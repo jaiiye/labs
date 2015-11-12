@@ -36,7 +36,7 @@ class SwingThreadFrame extends JFrame
 {
    public SwingThreadFrame()
    {
-      final JComboBox<Integer> combo = new JComboBox<>();
+      final JComboBox<Integer> combo = new JComboBox<Integer>();
       combo.insertItemAt(Integer.MAX_VALUE, 0);
       combo.setPrototypeDisplayValue(combo.getItemAt(0));
       combo.setSelectedIndex(0);

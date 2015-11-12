@@ -33,8 +33,8 @@ public class QueryTest
 
    private static Scanner in;
    private static Connection conn;
-   private static ArrayList<String> authors = new ArrayList<>();
-   private static ArrayList<String> publishers = new ArrayList<>();
+   private static ArrayList<String> authors = new ArrayList<String>();
+   private static ArrayList<String> publishers = new ArrayList<String>();
    
    public static void main(String[] args) throws IOException
    {

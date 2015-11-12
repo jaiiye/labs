@@ -21,7 +21,7 @@ public class DoubleArrayEditorPanel extends JPanel
    private JFormattedTextField valueField = new JFormattedTextField(new Double(0.0));
    private JButton sizeButton = new JButton("Resize");
    private JButton valueButton = new JButton("Change");
-   private JList<String> elementList = new JList<>();
+   private JList<String> elementList = new JList<String>();
    private DoubleArrayListModel model = new DoubleArrayListModel();
 
    public DoubleArrayEditorPanel(PropertyEditorSupport ed)

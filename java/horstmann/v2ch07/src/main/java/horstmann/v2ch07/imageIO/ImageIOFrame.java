@@ -147,8 +147,8 @@ public class ImageIOFrame extends JFrame
     */
    public static Set<String> getWriterFormats()
    {
-      Set<String> writerFormats = new TreeSet<>();
-      Set<String> formatNames = new TreeSet<>(Arrays.asList(ImageIO
+      Set<String> writerFormats = new TreeSet<String>();
+      Set<String> formatNames = new TreeSet<String>(Arrays.asList(ImageIO
             .getWriterFormatNames()));
       while (formatNames.size() > 0)
       {

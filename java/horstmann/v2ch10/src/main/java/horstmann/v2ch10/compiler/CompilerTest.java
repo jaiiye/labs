@@ -18,9 +18,9 @@ public class CompilerTest
    {
       JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
 
-      final List<ByteArrayJavaClass> classFileObjects = new ArrayList<>();
+      final List<ByteArrayJavaClass> classFileObjects = new ArrayList<ByteArrayJavaClass>();
 
-      DiagnosticCollector<JavaFileObject> diagnostics = new DiagnosticCollector<>();
+      DiagnosticCollector<JavaFileObject> diagnostics = new DiagnosticCollector<JavaFileObject>();
 
       JavaFileManager fileManager = compiler.getStandardFileManager(diagnostics, null, null);
       fileManager = new ForwardingJavaFileManager<JavaFileManager>(fileManager)
@@ -60,7 +60,7 @@ public class CompilerTest
             {
                try
                {
-                  Map<String, byte[]> byteCodeMap = new HashMap<>();
+                  Map<String, byte[]> byteCodeMap = new HashMap<String, byte[]>();
                   for (ByteArrayJavaClass cl : classFileObjects)
                      byteCodeMap.put(cl.getName().substring(1), cl.getBytes());
                   ClassLoader loader = new MapClassLoader(byteCodeMap);

@@ -19,7 +19,7 @@ public class FutureTest
       String keyword = in.nextLine();
 
       MatchCounter counter = new MatchCounter(new File(directory), keyword);
-      FutureTask<Integer> task = new FutureTask<>(counter);
+      FutureTask<Integer> task = new FutureTask<Integer>(counter);
       Thread t = new Thread(task);
       t.start();
       try
@@ -62,13 +62,13 @@ class MatchCounter implements Callable<Integer>
       try
       {
          File[] files = directory.listFiles();
-         List<Future<Integer>> results = new ArrayList<>();
+         List<Future<Integer>> results = new ArrayList<Future<Integer>>();
 
          for (File file : files)
             if (file.isDirectory())
             {
                MatchCounter counter = new MatchCounter(file, keyword);
-               FutureTask<Integer> task = new FutureTask<>(counter);
+               FutureTask<Integer> task = new FutureTask<Integer>(counter);
                results.add(task);
                Thread t = new Thread(task);
                t.start();

@@ -16,7 +16,7 @@ public class SetTest
       handler.setLevel(Level.FINEST);
       Logger.getLogger(Logger.GLOBAL_LOGGER_NAME).addHandler(handler);
 
-      Set<Item> parts = new HashSet<>();
+      Set<Item> parts = new HashSet<Item>();
       parts.add(new Item("Toaster", 1279));
       parts.add(new Item("Microwave", 4104));
       parts.add(new Item("Toaster", 1279));

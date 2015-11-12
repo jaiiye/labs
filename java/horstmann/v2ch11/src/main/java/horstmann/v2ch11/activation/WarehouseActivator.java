@@ -23,7 +23,7 @@ public class WarehouseActivator
       ActivationGroupDesc group = new ActivationGroupDesc(props, null);
       ActivationGroupID id = ActivationGroup.getSystem().registerGroup(group);
 
-      Map<String, Double> prices = new HashMap<>();
+      Map<String, Double> prices = new HashMap<String, Double>();
       prices.put("Blackwell Toaster", 24.95);
       prices.put("ZapXpress Microwave Oven", 49.95);
 

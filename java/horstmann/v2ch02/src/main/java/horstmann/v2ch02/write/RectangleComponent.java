@@ -23,8 +23,8 @@ public class RectangleComponent extends JComponent
 
    public RectangleComponent()
    {
-      rects = new ArrayList<>();
-      colors = new ArrayList<>();
+      rects = new ArrayList<Rectangle2D>();
+      colors = new ArrayList<Color>();
       generator = new Random();
 
       DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();

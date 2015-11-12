@@ -271,7 +271,7 @@ class DataPanel extends JPanel
     */
    public DataPanel(RowSet rs) throws SQLException
    {
-      fields = new ArrayList<>();
+      fields = new ArrayList<JTextField>();
       setLayout(new GridBagLayout());
       GridBagConstraints gbc = new GridBagConstraints();
       gbc.gridwidth = 1;

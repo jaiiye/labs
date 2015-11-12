@@ -24,7 +24,7 @@ class SplitPaneFrame extends JFrame
 
       // set up components for planet names, images, descriptions
 
-      final JList<Planet> planetList = new JList<>(planets);
+      final JList<Planet> planetList = new JList<Planet>(planets);
       final JLabel planetImage = new JLabel();
       final JTextArea planetDescription = new JTextArea();
 

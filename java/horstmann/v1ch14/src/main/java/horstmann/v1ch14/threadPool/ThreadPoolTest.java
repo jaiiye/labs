@@ -70,7 +70,7 @@ class MatchCounter implements Callable<Integer>
       try
       {
          File[] files = directory.listFiles();
-         List<Future<Integer>> results = new ArrayList<>();
+         List<Future<Integer>> results = new ArrayList<Future<Integer>>();
 
          for (File file : files)
             if (file.isDirectory())

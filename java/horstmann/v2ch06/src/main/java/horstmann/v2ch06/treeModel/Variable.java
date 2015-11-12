@@ -24,7 +24,7 @@ public class Variable
       type = aType;
       name = aName;
       value = aValue;
-      fields = new ArrayList<>();
+      fields = new ArrayList<Field>();
 
       // find all fields if we have a class type except we don't expand strings and null values
 

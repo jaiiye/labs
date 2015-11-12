@@ -86,7 +86,7 @@ class SystemTrayApp
 
    private List<String> readFortunes()
    {
-      List<String> fortunes = new ArrayList<>();
+      List<String> fortunes = new ArrayList<String>();
       try (InputStream inStream = getClass().getResourceAsStream("fortunes"))       
       {
          Scanner in = new Scanner(inStream); 

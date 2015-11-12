@@ -13,7 +13,7 @@ public class WarehouseImpl extends UnicastRemoteObject implements Warehouse
 
    public WarehouseImpl() throws RemoteException
    {
-      prices = new HashMap<>();
+      prices = new HashMap<String, Double>();
       prices.put("Blackwell Toaster", 24.95);
       prices.put("ZapXpress Microwave Oven", 49.95);
    }

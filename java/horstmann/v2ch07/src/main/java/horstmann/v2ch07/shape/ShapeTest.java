@@ -37,7 +37,7 @@ class ShapeTestFrame extends JFrame
    {
       final ShapeComponent comp = new ShapeComponent();
       add(comp, BorderLayout.CENTER);
-      final JComboBox<ShapeMaker> comboBox = new JComboBox<>();
+      final JComboBox<ShapeMaker> comboBox = new JComboBox<ShapeMaker>();
       comboBox.addItem(new LineMaker());
       comboBox.addItem(new RectangleMaker());
       comboBox.addItem(new RoundRectangleMaker());

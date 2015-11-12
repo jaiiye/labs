@@ -64,7 +64,7 @@ public class PlanetTableFrame extends JFrame
       table.getColumnModel().getColumn(COLOR_COLUMN).setMinWidth(250);
       table.getColumnModel().getColumn(IMAGE_COLUMN).setMinWidth(100);
       
-      final TableRowSorter<TableModel> sorter = new TableRowSorter<>(model);
+      final TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(model);
       table.setRowSorter(sorter);
       sorter.setComparator(COLOR_COLUMN, new Comparator<Color>()
          {
@@ -80,8 +80,8 @@ public class PlanetTableFrame extends JFrame
       sorter.setSortable(IMAGE_COLUMN, false);
       add(new JScrollPane(table), BorderLayout.CENTER);
 
-      removedRowIndices = new HashSet<>();
-      removedColumns = new ArrayList<>();
+      removedRowIndices = new HashSet<Integer>();
+      removedColumns = new ArrayList<TableColumn>();
 
       final RowFilter<TableModel, Integer> filter = new RowFilter<TableModel, Integer>()
       {

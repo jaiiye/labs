@@ -23,7 +23,7 @@ public class BeanInfoAnnotationProcessor extends AbstractProcessor
    {
       for (TypeElement t : annotations)
       {
-         Map<String, Property> props = new LinkedHashMap<>();
+         Map<String, Property> props = new LinkedHashMap<String, Property>();
          String beanClassName = null;
          for (Element e : roundEnv.getElementsAnnotatedWith(t))
          {

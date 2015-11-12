@@ -17,7 +17,7 @@ public class WarehouseImpl extends UnicastRemoteObject implements Warehouse
     */
    public WarehouseImpl(Warehouse backup) throws RemoteException
    {
-      products = new HashMap<>();
+      products = new HashMap<String, Product>();
       this.backup = backup;
    }
 

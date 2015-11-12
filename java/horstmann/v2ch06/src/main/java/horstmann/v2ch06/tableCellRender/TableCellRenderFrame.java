@@ -25,7 +25,7 @@ public class TableCellRenderFrame extends JFrame
       table.setDefaultRenderer(Color.class, new ColorTableCellRenderer());
       table.setDefaultEditor(Color.class, new ColorTableCellEditor());
 
-      JComboBox<Integer> moonCombo = new JComboBox<>();
+      JComboBox<Integer> moonCombo = new JComboBox<Integer>();
       for (int i = 0; i <= 20; i++)
          moonCombo.addItem(i);
 
