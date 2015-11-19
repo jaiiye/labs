@@ -2,16 +2,20 @@ package javaee.pw.zda.ex2;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+//import java.awt.Toolkit;
 
-public class PrimeNumbersTimer implements ActionListener {
+import java.util.Timer;
+import java.util.TimerTask;
+
+public class PrimeNumbersTimer implements ActionListener {	
+	
 	private static int genNextPrimeNumber(int initalNumber) {
 		int testNumber = initalNumber + 1;
 		
 		while (!isPrimeNumber(testNumber)) {
 			testNumber++;
-		}
+		}	
 		
-		System.exit(0);;
 		return testNumber;
 	}
 	
@@ -28,40 +32,51 @@ public class PrimeNumbersTimer implements ActionListener {
 		return true;	
 	}
 	
-	public void actionPerformed(ActionEvent event){	
-		long startTime;
-		long stopTime = 0;
-		
+	private static void printPrimeNumber() {		
 		int primeNumber = 1;
-		
-		startTime = System.currentTimeMillis();
-		
-		while ( (stopTime - startTime) < 5000) {
-			System.out.printf("Elapsed time: %d [ms]\n", -(stopTime - startTime));
-			
-			/*
-			while (!isPrimeNumber(primeNumber)) {
-				System.out.println("while (!isPrimeNumber(this.primeNumber))");				
-				primeNumber = genNextPrimeNumber(primeNumber + 1);						
-			}
-			
-			if (isPrimeNumber(primeNumber)) {
-				System.out.printf("Next Prime Number is: %d\n", primeNumber);
-			}
-			primeNumber++;*/
-			stopTime = System.currentTimeMillis();
+		while(true) {			
+			primeNumber = genNextPrimeNumber(primeNumber);
+			System.out.printf("Next prime number is: [%d]\n", primeNumber);
 		}
-		
-		System.exit(0);
 	}
-
 	
 	
-	public static void main(String[] args) {
+	public void actionPerformed(ActionEvent event){	
+		Timer timer = new Timer();
+		TimerTask task = new PrintPrimeNumber();
+		
+		System.out.printf("[%d]\n", task.scheduledExecutionTime());
+		
+		System.out.println("Start!");
+		timer.schedule(task, 0, 100);	
+		System.out.println("End!");		
+	}
 	
+		
+	class PrintPrimeNumber extends TimerTask {
+		int primeNumber = 1;
+		long scheduledExecutionTime = 0;
+		long systemTime = System.currentTimeMillis();
+		
+		public void run() {
+			
+			while ( (this.scheduledExecutionTime - this.systemTime) < 5000 ) {
+				this.scheduledExecutionTime = System.currentTimeMillis();
+				this.primeNumber = genNextPrimeNumber(this.primeNumber);				
+				System.out.printf("Next prime number is: [%d], scheduledTime: [%d], systemTime: [%d], executionTime: [%d]\n", this.primeNumber, this.scheduledExecutionTime, this.systemTime, (this.scheduledExecutionTime - this.systemTime));
+			}
+			System.exit(0);
+			
+		}
+	}
+	
+	
+	
+	public static void main(String[] args) {		
+		
 		ActionListener action = new PrimeNumbersTimer();
 		
-		action.actionPerformed(null);
+		action.actionPerformed(null);		
 	}
 	
 }
