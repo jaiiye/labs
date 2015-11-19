@@ -2,8 +2,6 @@ package javaee.pw.zda.ex2;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-//import java.awt.Toolkit;
-
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -40,18 +38,14 @@ public class PrimeNumbersTimer implements ActionListener {
 		}
 	}
 	
-	
 	public void actionPerformed(ActionEvent event){	
 		Timer timer = new Timer();
 		TimerTask task = new PrintPrimeNumber();
 		
 		System.out.printf("[%d]\n", task.scheduledExecutionTime());
 		
-		System.out.println("Start!");
-		timer.schedule(task, 0, 100);	
-		System.out.println("End!");		
+		timer.schedule(task, 0, 1);		
 	}
-	
 		
 	class PrintPrimeNumber extends TimerTask {
 		int primeNumber = 1;
@@ -63,14 +57,12 @@ public class PrimeNumbersTimer implements ActionListener {
 			while ( (this.scheduledExecutionTime - this.systemTime) < 5000 ) {
 				this.scheduledExecutionTime = System.currentTimeMillis();
 				this.primeNumber = genNextPrimeNumber(this.primeNumber);				
-				System.out.printf("Next prime number is: [%d], scheduledTime: [%d], systemTime: [%d], executionTime: [%d]\n", this.primeNumber, this.scheduledExecutionTime, this.systemTime, (this.scheduledExecutionTime - this.systemTime));
+				System.out.printf("Next prime number is: [%d], scheduledTime: [%d], systemTime: [%d], executionTime: [%d] ms\n", this.primeNumber, this.scheduledExecutionTime, this.systemTime, (this.scheduledExecutionTime - this.systemTime));
 			}
 			System.exit(0);
 			
 		}
-	}
-	
-	
+	}	
 	
 	public static void main(String[] args) {		
 		
