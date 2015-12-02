@@ -5,7 +5,10 @@
   <groupId>javaee</groupId>
   <artifactId>pw</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <packaging>jar</packaging>
+  <modules>
+    <module>EventsHomeworks</module>
+  </modules>
+  <packaging>pom</packaging>
 
   <name>pw</name>
   <url>http://maven.apache.org</url>

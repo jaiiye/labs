@@ -11,5 +11,6 @@ public class Main {
 
         HelloWorld helloWorld = (HelloWorld) context.getBean("helloWorld");
         helloWorld.hello();
+
     }
 }
